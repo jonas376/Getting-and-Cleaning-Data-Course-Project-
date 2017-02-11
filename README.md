@@ -1,5 +1,5 @@
 ##
-# Getting and Cleaning Data Course Project – Course 3 Week 4 Coursera Project
+# Getting and Cleaning Data Course Project – Course 3 Week 4 Coursera
 
 #
 
