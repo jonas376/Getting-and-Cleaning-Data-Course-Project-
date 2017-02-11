@@ -16,15 +16,10 @@ Identifiers of six activities - WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS,
 | ACTIVITY ID    |    ACTIVITY |
 | --- | --- |
 | 1        |         WALKING |
-
 | 2      |           WALKING\_UPSTAIRS |
-
 | 3      |           WALKING\_DOWNSTAIRS |
-
 | 4      |           SITTING |
-
 | 5       |          STANDING |
-
 | 6       |          LAYING |
 
 ## FEATURES:
