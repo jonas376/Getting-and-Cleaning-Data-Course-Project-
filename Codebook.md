@@ -60,6 +60,7 @@ Measurements of 3-axial linear acceleration and 3-axial angular velocity at a co
 | timeBodyGyroscopeJerk-std()-X | normalized standard gravity untis (g) |
 | timeBodyGyroscopeJerk-std()-Y | normalized standard gravity untis (g) |
 | timeBodyGyroscopeJerk-std()-Z | normalized standard gravity untis (g) |
+
 | timeBodyAccelerometerMagnitude-mean() | normalized standard gravity untis (g) |
 | timeBodyAccelerometerMagnitude-std() | normalized standard gravity untis (g) |
 | timeGravityAccelerometerMagnitude-mean() | normalized standard gravity untis (g) |
@@ -97,36 +98,36 @@ Measurements of 3-axial linear acceleration and 3-axial angular velocity at a co
 | frequencyBodyGyroscopeJerkMagnitude-mean() | normalized standard gravity untis (g) |
 | frequencyBodyGyroscopeJerkMagnitude-std() | normalized standard gravity untis (g) |
 
-**Initial Step** – Downloads the dataset found online at [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Creates a new folder to hold the data (Course3Project). Extracts the data to the folder.
 
-**Step 1**  **–**  **Merges training and test data sets to create one data set:**
+**CHANGES MADE TO ORIGINAL DATA** – After download (see README.md for more information on download) there are 8 text files that will be read and modified to make new tables:
+
+- &quot;X\_test.txt&quot;, (2947 X 561) – contains test Features values.
+- &quot;X\_train.txt&quot;, (7352 X 561) – contains train Features values.
+- &quot;features.txt&quot;, (561 X 2) – contains the labels for the Features.
+- &quot;subject\_test.txt&quot;, (2947 X 1) – contains test Subject ID for each test observation.
+- &quot;subject\_train.txt&quot;, (7352 X1) – contains train Subject ID for each train observation.
+- &quot;y\_test.txt&quot;, (2947 X 1) – contains Activity identifiers for each test observation.
+- &quot;y\_train.txt&quot;, (7352 X 1) – contains train Activity identifiers for each train observation.
+- &quot;activity\_labels.txt&quot;, (6 X 2) – contains the Activity labels.
+
+**Steps taken:**
 
 1. Reads &quot;X\_test.txt&quot;, &quot;X\_train.txt&quot;, &quot;features.txt&quot; files.
-2. Merges the raw test and train files together into a table called &quot;testAndTrainData&quot;.
-3. Places readable labels to the features in the merged data.
+2. Merges the raw test and train files together into a table called _testAndTrainData_.
+3. Places readable labels to the features in the merged data. The features.txt data was transposed and its variable column discarded to make it the new column heading of _testAndTrainData_.
 4. Reads &quot;subject\_test.txt&quot;, &quot;subject\_train.txt&quot; files.
-5. Merges the test and train Subject ID files together into a table called &quot;testAndTrainSubjectID&quot;.
+5. Merges the test and train Subject ID files together into a table called _testAndTrainSubjectID_.
 6. Reads &quot;y\_test.txt&quot;, &quot;y\_train.txt&quot; files. These are Activity information files.
-7. Merges the activity test and train files together into a table called &quot;testAndTrainActivity&quot;.
-8. Merges all tables together, using Subject ID and Activity information as key identifiers into a table called &quot;mergedData&quot;.
+7. Merges the activity test and train files together into a table called _testAndTrainActivity_.
+8. Merges all tables together, using Subject ID and Activity information as key identifiers into a table called _mergedData_.
+9. Selects the mean and standard deviation column information from _mergedData,_ along with the SubjectID and Activity identifiers from the _mergedData_ table.
+10. The information is placed in new table called _meanAndStdData_.
+11. Reads the &quot;activity\_labels.txt&quot; file.
+12. Switches the activity identifiers with their labels on the _meanAndStdData_ table.
+13.  Looks at the column names and substitutes technical and truncated words with more informative ones and updates the _meanAndStdData_ table.
+14. Uses the _aggregate_ and _order_ functions to modify the _meanAndStdData_ table to show the information by Subject ID, followed by Activity ID.
+15. The reordered information is stored in a table called _tidyData_.
+16. Writes a text file with the _tidyData_ information with the name &quot;tidydata.txt&quot;.
 
-**Step 2 – Extracts only measurements on mean and standard deviation for each measurement:**
 
-1. Selects the mean and standard deviation column information from &quot;mergedData&quot;, along with the SubjectID and Activity identifiers from the &quot;mergedData&quot; table.
-2. The information is placed in new table called &quot;meanAndStdData&quot;.
-
-**Step 3 – Applies descriptive names to name activities in data set:**
-
-1. Reads the &quot;activity\_labels.txt&quot; file.
-2. Switches the activity identifiers with their labels on the &quot;meanAndStdData&quot; table.
-
-**Step 4 – Labels data set with descriptive variable names:**
-
-1. Looks at the column names and substitutes technical and truncated words with more informative ones and updates the &quot;meanAndStdData&quot; table.
-
-**Step 5 – Creates a second independent tidy data set with the average of each variable for each activity and each subject:**
-
-1. Uses the _aggregate_ and _order_ functions to modify the meanAndStdData table to show the information by Subject ID, followed by Activity ID.
-2. The reordered information is stored in a table called tidyData.
-3. Writes a text file with the tidyData information with the name &quot;tidydata.txt&quot;.
 
