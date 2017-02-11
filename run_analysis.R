@@ -19,7 +19,6 @@
 
  }
 
-
  if(!file.exists("./Course3Project/UCI HAR Dataset")){
 
          unzip(zipfile="./Course3Project/projectData.zip",
@@ -49,7 +48,7 @@ featureLabels <- featureLabels$V2
 
 names(testAndTrainData) <- featureLabels
 
-.
+
 
 ## Bring test and train subject data together
 
@@ -59,7 +58,7 @@ trainSubjectID <- read.table(file.path(path, "train", "subject_train.txt"))
 
 testAndTrainSubjectID <- rbind(testSubjectID, trainSubjectID)
 
-wnames(testAndTrainSubjectID) <- c("subject ID")
+names(testAndTrainSubjectID) <- c("subject ID")
 
 
 
@@ -79,7 +78,7 @@ names(testAndTrainActivity) <- c("Activity ID")
 
 mergedData <- cbind(testAndTrainSubjectID, testAndTrainActivity)
 
-rmergedData <- cbind(mergedData, testAndTrainData)
+mergedData <- cbind(mergedData, testAndTrainData)
 
 
 
