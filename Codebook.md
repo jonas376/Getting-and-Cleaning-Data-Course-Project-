@@ -24,7 +24,7 @@ Identifiers of six activities - WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS,
 
 ## FEATURES:
 
-ECIMAL -1:1 Normalized value in standard gravity units (g).
+DECIMAL -1:1 Normalized value in standard gravity units (g).
 
 Measurements of 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using an accelerometer and a gyroscope. &#39;-XYZ&#39; is used to denote 3-axial signals in the X, Y and Z directions. The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
