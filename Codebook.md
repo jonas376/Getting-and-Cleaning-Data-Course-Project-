@@ -33,7 +33,6 @@ Measurements of 3-axial linear acceleration and 3-axial angular velocity at a co
 | timeBodyAccelerometer-mean()-X | normalized standard gravity untis (g) |
 | timeBodyAccelerometer-mean()-Y | normalized standard gravity untis (g) |
 | timeBodyAccelerometer-mean()-Z | normalized standard gravity untis (g) |
-
 | timeBodyAccelerometer-std()-X | normalized standard gravity untis (g) |
 | timeBodyAccelerometer-std()-Y | normalized standard gravity untis (g) |
 | timeBodyAccelerometer-std()-Z | normalized standard gravity untis (g) |
