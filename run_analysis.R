@@ -49,7 +49,7 @@ featureLabels <- featureLabels$V2
 
 names(testAndTrainData) <- featureLabels
 
-
+.
 
 ## Bring test and train subject data together
 
@@ -59,7 +59,7 @@ trainSubjectID <- read.table(file.path(path, "train", "subject_train.txt"))
 
 testAndTrainSubjectID <- rbind(testSubjectID, trainSubjectID)
 
-names(testAndTrainSubjectID) <- c("subject ID")
+wnames(testAndTrainSubjectID) <- c("subject ID")
 
 
 
@@ -69,7 +69,7 @@ testActivity <- read.table(file.path(path, "test","y_test.txt"))
 
 trainActivity <- read.table(file.path(path, "train", "y_train.txt"))
 
-testAndTrainActivity <- rbind(testActivity, trainActivity)
+otestAndTrainActivity <- rbind(testActivity, trainActivity)
 
 names(testAndTrainActivity) <- c("Activity ID")
 
@@ -79,7 +79,7 @@ names(testAndTrainActivity) <- c("Activity ID")
 
 mergedData <- cbind(testAndTrainSubjectID, testAndTrainActivity)
 
-mergedData <- cbind(mergedData, testAndTrainData)
+rmergedData <- cbind(mergedData, testAndTrainData)
 
 
 
@@ -136,7 +136,7 @@ tidyData <- aggregateData[order(aggregateData$`subject ID`,
                                    
                                    aggregateData$`Activity ID`),]
 
-write.table(tidyData, file = "tidydata.txt", sep = '\t')
+write.table(tidyData, file = "tidydata.txt", row.name = FALSE, sep = '\t')
 
 
 
