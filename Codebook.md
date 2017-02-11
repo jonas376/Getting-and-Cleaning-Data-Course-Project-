@@ -13,19 +13,19 @@ Identifiers of a group of 30 volunteers within an age bracket of 19-48 years.
 
 Identifiers of six activities - WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING.
 
-ACTIVITY ID        ACTIVITY
+| ACTIVITY ID    |    ACTIVITY |
+| --- | --- |
+| 1        |         WALKING |
 
-1                 WALKING
+| 2      |           WALKING\_UPSTAIRS |
 
-2                 WALKING\_UPSTAIRS
+| 3      |           WALKING\_DOWNSTAIRS |
 
-3                 WALKING\_DOWNSTAIRS
+| 4      |           SITTING |
 
-4                 SITTING
+| 5       |          STANDING |
 
-5                 STANDING
-
-6                 LAYING
+| 6       |          LAYING |
 
 ## FEATURES:
  DECIMAL -1:1 Normalized value in standard gravity units (g).
